@@ -79,3 +79,16 @@ def main():
             print("\nInvalid choice. Please select from 1-5.")
             input("\nPress Enter to return to the menu...")
             continue
+
+        filename = files[choice]
+
+        print(f"\nProcessing '{filename}'...\n")
+        analyzer = WordAnalyzer(filename)
+
+        if analyzer.process_file():
+            analyzer.print_report()
+
+        input("\nPress Enter to return to the menu...")
+
+if __name__ == "__main__":
+    main()
